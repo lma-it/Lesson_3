@@ -1,6 +1,7 @@
+package Workers;
 import java.util.Iterator;
 
-public class Worker implements Iterator<String>{
+public class Worker implements Comparable<Worker>, Iterator<String>{
     protected String name;
     protected String lastName;
     protected int age;
@@ -39,5 +40,24 @@ public class Worker implements Iterator<String>{
             default:
                 return String.format("salary: %d", salary);
         }
+    }
+
+    @Override
+    public int compareTo(Worker o) {
+
+        // Пример записи ветвления без использования фигурных скобок.
+
+        if (this.age > o.age)
+            return 1;
+        else if (this.age < o.age)
+            return -1;
+        else
+            return 0;
+
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s age: %d salary: %d", name, lastName, age, salary);
     }
 }

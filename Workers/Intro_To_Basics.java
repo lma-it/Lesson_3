@@ -1,8 +1,11 @@
+package Workers;
 import static print_module.print_library.println;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
+import java.util.Collections;
 
 /**
  * Intro_To_Basics
@@ -66,5 +69,22 @@ public class Intro_To_Basics {
         while(components.hasNext()){
             println(worker.next());
         }
+
+        Random rand = new Random();
+
+        List<Worker> bd = new ArrayList<>();
+        for(int i = 0; i <  5; i++){
+            bd.add(new Worker("Name_" + i, 
+                              "LastName_" + i, 
+                              rand.nextInt(18, 30), 
+                              rand.nextInt(5000, 10000)));
+        }
+
+        println(bd);
+
+        Collections.sort(bd);
+
+        println(bd);
+
     }
 }
