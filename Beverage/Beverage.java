@@ -15,7 +15,8 @@ public abstract class Beverage implements Iterable<Ingridient>{
     }
 
     public void addComponent(Ingridient component){
-        components.add(component);
+        if(!(components.indexOf(component) != -1))
+            components.add(component);
     }
 
     // Пример создания своего собственного итератора, в случае если класс имплементируется от Iterator, если от Iterable, то эти методы не нужны

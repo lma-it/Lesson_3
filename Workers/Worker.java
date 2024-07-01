@@ -47,17 +47,19 @@ public class Worker implements Comparable<Worker>, Iterator<String>{
 
         // Пример записи ветвления без использования фигурных скобок.
 
-        if (this.age > o.age)
-            return 1;
-        else if (this.age < o.age)
-            return -1;
-        else
-            return 0;
+        // if (this.age > o.age)
+        //     return 1;
+        // else if (this.age < o.age)
+        //     return -1;
+        // else
+        //     return 0;
+
+        return Integer.compare(this.salary, o.salary);
 
     }
 
     @Override
     public String toString() {
-        return String.format("%s %s age: %d salary: %d", name, lastName, age, salary);
+        return String.format("\n%s %s age: %d salary: %d", name, lastName, age, salary);
     }
 }
