@@ -3,7 +3,8 @@ import static print_module.print_library.println;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Collections;
+// import java.util.Collections;
+// import java.util.Iterator;
 // import java.util.Iterator;
 
 public class BeverageMain {
@@ -51,8 +52,19 @@ public class BeverageMain {
         
         println(numbers);
 
+        /**
+         * В данном случае мы создаем список, в который мы можем положить только наследников класса Beverage.
+         * Этот список без проблем принимает такие объекты как:
+         * 
+         * {@code Coffee latte = new Coffee();}
+         * {@code Beverage latte1 = new Coffee();}
+         */
         List<? super Beverage> list = new ArrayList<>();
 
+        list.add(latte);
+        Beverage latte2 = new Coffee();
+        list.add(latte2);
+        
 
     }
 }
